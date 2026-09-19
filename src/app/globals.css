@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  /* ===== Dr. Maya Reynolds — theme =====
+     Calm, warm, professional therapy palette: terracotta (primary),
+     dusty mauve (secondary), sage (accent). Centralized here so the whole
+     site can be re-themed by editing just these values. All text/background
+     pairings below are checked against WCAG AA. */
+
+  /* Backgrounds */
+  --color-background: #fbf6ef; /* warm ivory page background */
+  --color-surface: #ffffff; /* white cards / white sections */
+  --color-surface-alt: #ede2d2; /* warm sand — alternating section bg */
+
+  /* Text */
+  --color-ink: #322c26; /* deep warm charcoal — headings & primary text */
+  --color-muted: #6c6259; /* muted warm brown-grey — body copy */
+
+  /* Brand: primary / secondary / accent */
+  --color-primary: #a35c3d; /* terracotta clay — main CTAs, primary buttons */
+  --color-primary-dark: #8a4a2f; /* hover state */
+  --color-secondary: #7d5a66; /* dusty mauve — secondary buttons, alt accents */
+  --color-secondary-dark: #6b4b56; /* hover state */
+  --color-accent: #628070; /* sage green — script accents, highlights */
+  --color-accent-dark: #4d6455; /* deep sage — footer band */
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-alt: var(--color-surface-alt);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-dark: var(--color-secondary-dark);
+  --color-accent: var(--color-accent);
+  --color-accent-dark: var(--color-accent-dark);
+
+  --font-serif: var(--font-cormorant-infant);
+  --font-sans: var(--font-mulish);
+  --font-script: var(--font-parisienne);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Warm duotone wash over photography so every stock image reads as part
+   of the same terracotta / mauve / sage identity, not a random photo. */
+.photo-tint-primary {
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--color-primary) 30%, transparent),
+    color-mix(in srgb, var(--color-accent) 18%, transparent)
+  );
+  mix-blend-mode: multiply;
+}
+
+.photo-tint-secondary {
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--color-secondary) 32%, transparent),
+    color-mix(in srgb, var(--color-primary) 16%, transparent)
+  );
+  mix-blend-mode: multiply;
+}
+
+.photo-tint-accent {
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--color-accent) 30%, transparent),
+    color-mix(in srgb, var(--color-secondary) 16%, transparent)
+  );
+  mix-blend-mode: multiply;
+}
